@@ -55,7 +55,7 @@ ROOT_URLCONF = 'handmade.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR+'/handmade/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
