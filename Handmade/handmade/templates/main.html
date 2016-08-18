@@ -1,9 +1,10 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
  <head>
   <meta charset="utf-8">
   <title>Handmade</title>
+  <link rel="stylesheet" type="text/css" href="{% static "static/css/foundation.css" %}">
   <style>
    body {
     font: 11pt Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
@@ -18,7 +19,7 @@
     margin-top: 0; /* Убираем отступ сверху */
    }
    #header { /* Верхний блок */
-    background: #0080c0; /* Цвет фона */
+    background: #81954b; /* Цвет фона */
     padding: 10px; /* Поля вокруг текста */
    }
    #sidebar { /* Левая колонка */
@@ -35,6 +36,9 @@
    }
    #footer { /* Нижний блок */
     background: #333; /* Цвет фона */
+    position: fixed;  /* Абсолютное позиционирование */  
+    bottom: 0;  /* Чтоб футер был прикреплен к низу */
+    width: 100%;
     padding: 5px; /* Поля вокруг текста */
     color: #fff; /* Цвет текста */
     clear: left; /* Отменяем действие float */
@@ -42,13 +46,13 @@
   </style>
  </head>
  <body>
-  <div id="header"><a href = "/"><img src="{% static "img/logo.jpg" %}" alt =  "Logo Image here"></a></div>
+  <div id="header"><a href = "/"><img src="{% static "static/img/logo.jpg" %}"></a></div>
   <div id="sidebar">
-    <p><a href="b_all.html">Link 1</a></p>
-    <p><a href="b_author.html">Link 2</a></p>
-    <p><a href="b_theme.html">Link 3</a></p>
-    <p><a href="b_popular.html">FAQ</a></p>
-    <p><a href="b_last.html">Contacts</a></p>
+    <p><a href="/">Link 1</a></p>
+    <p><a href="/">Link 2</a></p>
+    <p><a href="/">Link 3</a></p>
+    <p><a href="/">FAQ</a></p>
+    <p><a href="/">Contacts</a></p>
   </div>
   <div id="content">
     <h2>Article name or something</h2>
