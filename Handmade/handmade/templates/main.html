@@ -46,18 +46,24 @@
   </style>
  </head>
  <body>
+  {% block header%}
   <div id="header"><a href = "/"><img src="{% static "static/img/logo.jpg" %}"></a></div>
+  {% endblock%}
+  {% block sidebar%}
   <div id="sidebar">
-    <p><a href="/">Link 1</a></p>
-    <p><a href="/">Link 2</a></p>
-    <p><a href="/">Link 3</a></p>
-    <p><a href="/">FAQ</a></p>
-    <p><a href="/">Contacts</a></p>
+    <p><a href="/">Главная</a></p>
+    <p><a href="/">Фотогаллерея</a></p>
+    <p><a href="/">Виды рукоделия</a></p>
+    <p><a href="/faq/">FAQ</a></p>
+    <p><a href="/contacts">Contacts</a></p>
   </div>
+  {% endblock %}
+  {% block content%}
   <div id="content">
     <h2>Article name or something</h2>
     <p>Some Article text, you know!</p>
   </div>
+  {% endblock %}
   <div id="footer">&copy; TeamPlay</div>
  </body>
 </html>

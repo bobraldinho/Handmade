@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'handmade'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -48,6 +50,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'handmade.urls'
@@ -81,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'djqyfvbhjd',
         'HOST': 'localhost',
-        'PORT': '5000',
+        'PORT': '5432',
     }
 }
 
@@ -108,7 +111,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
+
+# Available languages list
+LANGUAGES = (
+    ('ru', 'Russian'),
+    ('uk', 'Ukrainian'),
+)
+
+# ENABLE translation  django
+USE_I18N = True
+
+# Translation files source
+LOCALE_PATHS = (
+    'locale',
+    # os.path.join(PROJECT_DIR, 'locale'),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -122,8 +140,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+MEDIA_URL = "/media/"
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     ('static', os.path.join(BASE_DIR, '../static'))
 ]
+
+#WHAT IS THIS???
+#SITE_ID = 1
