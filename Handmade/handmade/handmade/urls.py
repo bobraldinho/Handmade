@@ -22,6 +22,6 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='main.html')),
-	url(r'^faq/', views.faq),
-    url(r'^contacts/', views.contacts),   
+    url(r'^faq/', views.faq),
+    url(r'^contacts/', views.contacts),
 )

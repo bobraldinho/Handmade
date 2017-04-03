@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 {% block content%}
-{% if latest_question_list %}
+{% if questions %}
     <ul>
     {% for question in questions %}
         <li>{{ question.question_text }}</li>
